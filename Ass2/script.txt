@@ -1,0 +1,170 @@
+Script started on 2022-10-06 22:20:08-06:00 [TERM="xterm-256color" TTY="/dev/pts/11" COLUMNS="117" LINES="62"]
+]0;anh.nguyen5@csa3:~/cpsc355/ass2[?2004hanh.nguyen5@csa3:~/cpsc355/ass2$ gdb assign2a.o
+[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign2a.o[m...
+[?2004h
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+(No debugging symbols found in [32massign2a.o[m)
+[?2004h(gdb) break step1
+[?2004lBreakpoint 1 at [34m0x4006d0[m
+[?2004h(gdb) break sd[Ktep2
+[?2004lBreakpoint 2 at [34m0x4006e4[m
+[?2004h(gdb) break step2[K3
+[?2004lBreakpoint 3 at [34m0x4006f8[m
+[?2004h(gdb) break step3[K4
+[?2004lBreakpoint 4 at [34m0x40070c[m
+[?2004h(gdb) break step4[K[K[K[K[Kresult
+[?2004lBreakpoint 5 at [34m0x400724[m
+[?2004h(gdb) break result[K[K[K[K[K[Kdisplay
+[?2004lBreakpoint 6 at [34m0x400740[m
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/ugd/anh.nguyen5/cpsc355/ass2/assign2a.o[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [34m0x00000000004006d0[m in [33mstep1[m ()
+[?2004h[?2004l[?2004h(gdb) p/x $w19
+[?2004l$1 = 0x7fc07fc
+[?2004h(gdb) p/x $w19[1P $w19t $w19
+[?2004l$2 = 111111111000000011111111100
+[?2004h(gdb) display i[K[K/i $pc
+[?2004l1: x/i $pc
+=> [34m0x4006d0[m <[33mstep1[m>:	and	w21, w19, #0x55555555
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006d4[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x4006d4[m <[33mstep1[m+4>:	lsl	w21, w21, #1
+[?2004h[?2004l[?2004h(gdb) nidisplay/i $pc[C[C[C[C[C[C[5Pp/t $w19[K[K21
+[?2004l$3 = 101010101000000010101010100
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006d8[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x4006d8[m <[33mstep1[m+8>:	lsr	w22, w19, #1
+[?2004h[?2004l[?2004h(gdb) nip/t $w21
+[?2004l$4 = 1010101010000000101010101000
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006dc[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x4006dc[m <[33mstep1[m+12>:	and	w22, w22, #0x55555555
+[?2004h[?2004l[?2004h(gdb) nip/t $w21[K2[K[K19
+[?2004l$5 = 111111111000000011111111100
+[?2004h(gdb) p/t $w19[K[K22
+[?2004l$6 = 11111111100000001111111110
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006e0[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x4006e0[m <[33mstep1[m+16>:	orr	w20, w21, w22
+[?2004h[?2004l[?2004h(gdb) nip/t $w22
+[?2004l$7 = 1010101000000000101010100
+[?2004h(gdb) b[Kni
+[?2004l
+Breakpoint 2, [34m0x00000000004006e4[m in [33mstep2[m ()
+1: x/i $pc
+=> [34m0x4006e4[m <[33mstep2[m>:	and	w21, w20, #0x33333333
+[?2004h[?2004l[?2004h(gdb) nip/t $w22[K1
+[?2004l$8 = 1010101010000000101010101000
+[?2004h(gdb) p/t $w21[C[C[C[C[C[Cni[Kp/t $w21[K0
+[?2004l$9 = 1011111111000000101111111100
+[?2004h(gdb) p/t $w20[1P $w20x $w20
+[?2004l$10 = 0xbfc0bfc
+[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 3, [34m0x00000000004006f8[m in [33mstep3[m ()
+1: x/i $pc
+=> [34m0x4006f8[m <[33mstep3[m>:	and	w21, w20, #0xf0f0f0f
+[?2004h[?2004l[?2004h(gdb) cp/x $w20t[C[C[C[C[C[K1
+[?2004l$11 = 1100110000000000110011000000
+[?2004h(gdb) p/t $w21[K2
+[?2004l$12 = 10001100110000001000110011
+[?2004h(gdb) p/t $w22[Ko
+[?2004l$13 = void
+[?2004h(gdb) p/t $w2o[K0
+[?2004l$14 = 1110111100110000111011110011
+[?2004h(gdb) p/t $w20[Kp/t $w20o21[C[C[C[C[C[Cc[Kp/x $w20
+[?2004l$15 = 0xef30ef3
+[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 4, [34m0x000000000040070c[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x40070c[m <[33mstep4[m>:	lsl	w21, w20, #24
+[?2004h[?2004l[?2004h(gdb) cp/x $w20t[C[C[C[C[C[K1
+[?2004l$16 = 11100000001100001110000000110000
+[?2004h(gdb) p/t $w21[K2
+[?2004l$17 = 11110000000000001111
+[?2004h(gdb) p/t $w22[K0
+[?2004l$18 = 11100000001111111110000000111111
+[?2004h(gdb) p/t $w2021[C[C[C[C[C[Cc[Kp/x $w20
+[?2004l$19 = 0xe03fe03f
+[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 5, [34m0x0000000000400724[m in [33mresult[m ()
+1: x/i $pc
+=> [34m0x400724[m <[33mresult[m>:	orr	w20, w21, w22
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400728[m in [33mresult[m ()
+1: x/i $pc
+=> [34m0x400728[m <[33mresult[m+4>:	orr	w20, w20, w23
+[?2004h[?2004l[?2004h(gdb) ni[1Pcp/x $w20[1P $w20t $w20[C[C[C[C[C[K1
+[?2004l$20 = 111111000000000000000000000000
+[?2004h(gdb) p/t $w21[K2
+[?2004l$21 = 111000000000000000000000
+[?2004h(gdb) p/t $w22[K0
+[?2004l$22 = 111111111000000000000000000000
+[?2004h(gdb) ni
+[?2004l[34m0x000000000040072c[m in [33mresult[m ()
+1: x/i $pc
+=> [34m0x40072c[m <[33mresult[m+8>:	orr	w20, w20, w24
+[?2004h[?2004l[?2004h(gdb) nip/t $w20[K3
+[?2004l$23 = 11111100000000
+[?2004h(gdb) p/t $w23[C[C[C[C[C[Cni[Kp/t $w23[K0
+[?2004l$24 = 111111111000000011111100000000
+[?2004h(gdb) p/t $w20[K[K[K[K[K[K[K[Kb[Kni
+[?2004l[34m0x0000000000400730[m in [33mprint[m ()
+1: x/i $pc
+=> [34m0x400730[m <[33mprint[m>:	adrp	x0, [34m0x400000[m
+[?2004h[?2004l[?2004h(gdb) nip/t $w20[K4
+[?2004l$25 = 11100000
+[?2004h(gdb) p/t $w24[K0
+[?2004l$26 = 111111111000000011111111100000
+[?2004h(gdb) p/t $w20[1P $w20x $w20[C[C[C[C[C
+[?2004l$27 = 0x3fe03fe0
+[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 6, [34m0x0000000000400740[m in [33mdisplay[m ()
+1: x/i $pc
+=> [34m0x400740[m <[33mdisplay[m>:	bl	[34m0x400540[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) brea[K[K[K[Kp[Kc[Kp/x $w20t[C[C[C[C[C
+[?2004l$28 = 111111111000000011111111100000
+[?2004h(gdb) p/t $w20[C[C[C[C[C[C[Kp/x $w20
+[?2004l$29 = 0x3fe03fe0
+[?2004h(gdb) c
+[?2004lContinuing.
+original: 0x07FC07FC	reversed: 0x3FE03FE0
+[Inferior 1 (process 3244314) exited normally]
+[?2004h[?2004l[?2004h(gdb) exit
+[?2004l]0;anh.nguyen5@csa3:~/cpsc355/ass2[?2004hanh.nguyen5@csa3:~/cpsc355/ass2$ exit
+[?2004lexit
+
+Script done on 2022-10-06 22:27:10-06:00 [COMMAND_EXIT_CODE="0"]
